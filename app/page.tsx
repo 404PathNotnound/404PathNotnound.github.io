@@ -4,7 +4,7 @@ import { ProjectCarousel } from '@/components/project-carousel';
 const expertise = ['Angular', 'TypeScript', 'RxJS avancé', 'HTML & CSS', 'Angular Material', 'Responsive design'];
 const architecture = ['Standalone Components', 'Signals', 'Lazy Loading', 'REST API', 'CI/CD', 'Tests unitaires & E2E', 'Accessibilité RGAA'];
 const personalProjects = [
-  { number: '01', title: 'Ce portfolio', tag: 'React · TypeScript', description: 'Le site sur lequel vous êtes est l’une de mes réalisations personnelles. Je l’ai créé en React pour consolider mes bases sur cette technologie largement représentée sur le marché — une manière élégante de joindre l’utile à l’auto-démonstration.', images: [], imageAlt: 'Aperçu du portfolio React' },
+  { number: '01', title: 'Ce portfolio', tag: 'React · TypeScript', description: 'Le site sur lequel vous êtes est l’une de mes réalisations personnelles. Je l’ai créé en React pour consolider mes bases sur cette technologie largement représentée sur le marché — une manière élégante de joindre l’utile à l’auto-démonstration.', images: ['/projet1.png'], imageAlt: 'Aperçu du portfolio React' },
   { number: '02', title: 'Mesure de température dans un poêle de masse', tag: 'Électronique · ESP32-WROOM · Serveur local · HTML · CSS', description: 'ce projet a été réalisé pour l\'association, la maison en paille. Un système équipé de 5 sondes Thermocouple K, suit les températures dans un poêle de masse pouvant aller jusqu\'à 1200 degrés. Une carte ESP32-WROOM héberge un serveur local et propose une interface avec un graphique consultable instantanément via nimporte quel device (PC/Android/IOS). Les données peuvent aussi être exportées au format CSV.', images: ['/projet2-01.jpeg', '/projet2-02.jpeg', '/projet2-03.png'], imageAlt: 'Aperçu du projet de mesure de température' },
 ];
 const interests = [
@@ -51,7 +51,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#accueil" aria-label="Retour à l’accueil"><span className="brand-mark">PT</span><span className="brand-name">Pierre Travers</span></a>
         <nav aria-label="Navigation principale"><a href="#profil">Profil</a><a href="#parcours">Parcours</a><a href="#realisations">Réalisations</a><a href="#expertise">Expertise</a><a href="#ia">Mon rapport à l’IA</a></nav>
-        <a className="header-contact" href="mailto:pierretravers56@gmail.com">Me contacter <ArrowUpRight size={17} aria-hidden="true" /></a>
+        <a className="header-contact" href="#contact">Me contacter <ArrowUpRight size={17} aria-hidden="true" /></a>
       </header>
 
       <section className="hero" id="accueil">
