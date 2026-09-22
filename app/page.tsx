@@ -1,13 +1,20 @@
 import { ArrowDown, ArrowUpRight, Check, Mail, MapPin, Phone } from 'lucide-react';
+import { ProjectCarousel } from '@/components/project-carousel';
 
 const expertise = ['Angular', 'TypeScript', 'RxJS avancé', 'HTML & CSS', 'Angular Material', 'Responsive design'];
 const architecture = ['Standalone Components', 'Signals', 'Lazy Loading', 'REST API', 'CI/CD', 'Tests unitaires & E2E', 'Accessibilité RGAA'];
+const personalProjects = [
+  { number: '01', title: 'Ce portfolio', tag: 'React · TypeScript', description: 'Le site sur lequel vous êtes est l’une de mes réalisations personnelles. Je l’ai créé en React pour consolider mes bases sur cette technologie largement représentée sur le marché — une manière élégante de joindre l’utile à l’auto-démonstration.', images: [], imageAlt: 'Aperçu du portfolio React' },
+  { number: '02', title: 'Mesure de température dans un poêle de masse', tag: 'Électronique · ESP32-WROOM · Serveur local · HTML · CSS', description: 'ce projet a été réalisé pour l\'association, la maison en paille. Un système équipé de 5 sondes Thermocouple K, suit les températures dans un poêle de masse pouvant aller jusqu\'à 1200 degrés. Une carte ESP32-WROOM héberge un serveur local et propose une interface avec un graphique consultable instantanément via nimporte quel device (PC/Android/IOS). Les données peuvent aussi être exportées au format CSV.', images: ['/projet2-01.jpeg', '/projet2-02.jpeg', '/projet2-03.png'], imageAlt: 'Aperçu du projet de mesure de température' },
+];
 
 const experiences = [
   {
     period: '2022 — 2025',
     role: 'Développeur Front-End Angular',
     company: 'Famileo · Saint-Malo',
+    logo: '/Famileo-LOGO-GRANDS-USAGES.jpg',
+    logoAlt: 'Logo Famileo',
     description: 'Conception de composants métiers complexes, modernisation continue de l’application et création d’une bibliothèque Angular mutualisée pour gagner en productivité et en maintenabilité.',
     highlights: ['Players vidéo, formulaires dynamiques et composants sur mesure', 'Migrations Angular et adoption des nouvelles pratiques du framework', 'Revues de code, tests unitaires et end-to-end', 'Internationalisation de l’application avec Poeditor','Mise en place de bonnes pratiques mutualisées à toute l’équipe front'],
   },
@@ -15,8 +22,19 @@ const experiences = [
     period: '2019 — 2022',
     role: 'Développeur Front-End Angular',
     company: 'OPEN · Rennes',
+    logo: '/open_2_logo.jpeg',
+    logoAlt: 'Logo OPEN',
     description: 'Développement et maintenance d’applications Angular, en collaboration étroite avec les équipes UX/UI pour livrer des interfaces performantes, responsives et accessibles.',
     highlights: ['Conception de composants Angular réutilisables', 'Mise en conformité avec le référentiel RGAA', 'Accompagnement des équipes sur Angular et RxJS','Conception et réalisation d\'une application de A à Z pour le client Orange.','Création d\'API côté back (JAVA/SPRING).'],
+  },
+  {
+    period: '2015 — 2019',
+    role: 'Diplôme d’ingénieur en informatique',
+    company: 'ENSEA · Cergy (Paris)',
+    logo: '/Logo-ENSEA-couleur-1-605x605.jpg',
+    logoAlt: 'Logo ENSEA',
+    description: 'Formation d’ingénieur généraliste avec une spécialisation en informatique, systèmes et développement logiciel.',
+    highlights: ['Formation en informatique et systèmes', 'Projets de développement logiciel'],
   },
 ];
 
@@ -25,7 +43,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#accueil" aria-label="Retour à l’accueil"><span className="brand-mark">PT</span><span className="brand-name">Pierre Travers</span></a>
-        <nav aria-label="Navigation principale"><a href="#profil">Profil</a><a href="#parcours">Parcours</a><a href="#expertise">Expertise</a></nav>
+        <nav aria-label="Navigation principale"><a href="#profil">Profil</a><a href="#parcours">Parcours</a><a href="#realisations">Réalisations</a><a href="#expertise">Expertise</a></nav>
         <a className="header-contact" href="mailto:pierretravers56@gmail.com">Me contacter <ArrowUpRight size={17} aria-hidden="true" /></a>
       </header>
 
@@ -46,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="tech-strip" aria-label="Technologies principales"><span>Angular</span><i /><span>TypeScript</span><i /><span>RxJS</span><i /><span>Architecture front-end</span><i /><span>Accessibilité</span></div>
+      <div className="tech-strip" aria-label="Technologies principales"><span>Angular</span><i /><span>TypeScript</span><i /><span>RxJS</span><i /><span>Architecture front-end</span><i /><span>React</span><i /><span>Accessibilité</span></div>
 
       <section className="profile-section" id="profil">
         <div className="section-label">01 · Profil</div>
@@ -58,15 +76,31 @@ export default function Home() {
         <div className="section-topline"><div className="section-label">02 · Parcours</div></div>
         <div className="experience-list">{experiences.map((experience, index) => (
           <article className="experience-card" key={experience.company}>
-            <div className="experience-index">0{index + 1}</div><div className="experience-period">{experience.period}</div>
+            <div className="experience-index">0{index + 1}</div><div className="experience-period"><span>{experience.period}</span><img className="company-logo" src={experience.logo} alt={experience.logoAlt} /></div>
             <div className="experience-main"><p className="company">{experience.company}</p><h3>{experience.role}</h3><p className="experience-description">{experience.description}</p></div>
             <ul>{experience.highlights.map((highlight) => <li key={highlight}><Check size={16} aria-hidden="true" />{highlight}</li>)}</ul>
           </article>
         ))}</div>
       </section>
 
+      <section className="projects-section" id="realisations">
+        <div className="section-topline"><div className="section-label">03 · Réalisations</div></div>
+        <div className="projects-grid">
+          <article className="projects-panel projects-panel-dark projects-panel-personal">
+            <p className="kicker light">Réalisations personnelles</p>
+            <h2>Des projets développés pour apprendre, construire et expérimenter.</h2>
+            <div className="personal-project-list">{personalProjects.map((project) => (
+              <article className="personal-project" key={project.number}>
+                <ProjectCarousel images={project.images} alt={project.imageAlt} />
+                <div className="personal-project-content"><span className="personal-project-number">{project.number}</span><p className="personal-project-tag">{project.tag}</p><h3>{project.title}</h3><p>{project.description}</p></div>
+              </article>
+            ))}</div>
+          </article>
+        </div>
+      </section>
+
       <section className="expertise-section" id="expertise">
-        <div className="section-label light">03 · Expertise</div>
+        <div className="section-label light">04 · Expertise</div>
         <div className="expertise-grid">
           <div className="expertise-intro"><p className="kicker light">Mon terrain de jeu</p><h2>Des fondations techniques pensées pour durer.</h2><p>Architecture, composants, performance, qualité : je prends soin de l’ensemble de la chaîne qui transforme une idée en expérience fiable.</p></div>
           <div className="skills-column"><span className="skills-title">Technologies</span>{expertise.map((skill, index) => <div className="skill-row" key={skill}><span>{String(index + 1).padStart(2, '0')}</span>{skill}</div>)}</div>
@@ -75,8 +109,7 @@ export default function Home() {
       </section>
 
       <section className="human-section">
-        <div className="human-copy"><div className="section-label">04 · Au-delà du code</div><h2>Curieux par nature,<br />engagé dans le collectif.</h2><p>Communication, écoute et transmission font partie de ma manière de travailler. En dehors du code, je rénove du bâti ancien, parcours les sentiers, joue au disc-golf et voyage dès que l’occasion se présente.</p></div>
-        <div className="education-card"><span>Formation</span><strong>Diplôme d’ingénieur<br />en informatique</strong><p>ENSEA · Cergy (Paris)</p><small>2015 — 2019</small></div>
+        <div className="human-copy"><div className="section-label">05 · Au-delà du code</div><h2>Curieux par nature,<br />engagé dans le collectif.</h2><p>Communication, écoute et transmission font partie de ma manière de travailler. En dehors du code, je rénove du bâti ancien, parcours les sentiers, joue au disc-golf et voyage dès que l’occasion se présente.</p></div>
       </section>
 
       <section className="contact-section" id="contact">
