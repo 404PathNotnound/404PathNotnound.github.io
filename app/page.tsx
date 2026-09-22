@@ -9,14 +9,14 @@ const experiences = [
     role: 'Développeur Front-End Angular',
     company: 'Famileo · Saint-Malo',
     description: 'Conception de composants métiers complexes, modernisation continue de l’application et création d’une bibliothèque Angular mutualisée pour gagner en productivité et en maintenabilité.',
-    highlights: ['Players vidéo, formulaires dynamiques et composants sur mesure', 'Migrations Angular et adoption des nouvelles pratiques du framework', 'Revues de code, tests unitaires et end-to-end', 'Internationalisation de l’application avec Poeditor'],
+    highlights: ['Players vidéo, formulaires dynamiques et composants sur mesure', 'Migrations Angular et adoption des nouvelles pratiques du framework', 'Revues de code, tests unitaires et end-to-end', 'Internationalisation de l’application avec Poeditor','Mise en place de bonnes pratiques mutualisées à toute l’équipe front'],
   },
   {
     period: '2019 — 2022',
     role: 'Développeur Front-End Angular',
     company: 'OPEN · Rennes',
     description: 'Développement et maintenance d’applications Angular, en collaboration étroite avec les équipes UX/UI pour livrer des interfaces performantes, responsives et accessibles.',
-    highlights: ['Conception de composants Angular réutilisables', 'Mise en conformité avec le référentiel RGAA', 'Accompagnement des équipes sur Angular et RxJS'],
+    highlights: ['Conception de composants Angular réutilisables', 'Mise en conformité avec le référentiel RGAA', 'Accompagnement des équipes sur Angular et RxJS','Conception et réalisation d\'une application de A à Z pour le client Orange.','Création d\'API côté back (JAVA/SPRING).'],
   },
 ];
 
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span /> Développeur Front-End Angular</p>
           <h1>Je construis des interfaces<span> utiles, solides et accessibles.</span></h1>
-          <p className="hero-intro">Je suis Pierre Travers, développeur front-end avec 6 ans d’expérience. J’imagine et réalise des applications Angular complexes, performantes et agréables à utiliser.</p>
+          <p className="hero-intro">Je suis Pierre Travers, développeur front-end avec 6 ans d’expérience. J’imagine et réalise des applications Angular complexes, performantes et agréables à utiliser tout en gardant de solides connaissances en back-end.</p>
           <div className="hero-actions">
             <a className="primary-button" href="#parcours">Découvrir mon parcours <ArrowDown size={18} aria-hidden="true" /></a>
             <a className="text-link" href="mailto:pierretravers56@gmail.com">Échanger sur un projet <ArrowUpRight size={18} aria-hidden="true" /></a>
@@ -42,7 +42,6 @@ export default function Home() {
         </div>
         <div className="portrait-wrap">
           <div className="portrait-frame"><img src="/pierre-travers.jpeg" alt="Pierre Travers au bord de la mer" width="1063" height="1021" /></div>
-          <div className="portrait-note"><span className="availability-dot" />Disponible pour de nouveaux défis</div>
           <p className="portrait-caption">Basé à Guégon · Bretagne</p>
         </div>
       </section>
@@ -52,11 +51,11 @@ export default function Home() {
       <section className="profile-section" id="profil">
         <div className="section-label">01 · Profil</div>
         <div className="profile-heading"><p className="kicker">Une expertise technique, une approche humaine.</p><h2>Faire simple pour l’utilisateur, même quand la technique ne l’est pas.</h2></div>
-        <div className="profile-body"><p>Spécialisé en Angular, TypeScript et RxJS, j’interviens de l’étude du besoin jusqu’à la livraison. J’aime transformer des problématiques métiers exigeantes en composants clairs, réutilisables et durables.</p><p>Autonome sans travailler en silo, je porte une attention particulière à la qualité du code, à la transmission des connaissances et à l’accessibilité. Mon objectif : aider les équipes à avancer plus vite, avec une base front-end qui reste saine dans le temps.</p></div>
+        <div className="profile-body"><p>Spécialisé en Angular, TypeScript et RxJS, j’interviens de l’étude du besoin jusqu’à la livraison. J’aime transformer des problématiques métiers exigeantes en composants clairs, réutilisables et durables.</p><p>Je porte une attention particulière à la qualité du code, à la transmission des connaissances et à l’accessibilité. Mon objectif : aider les équipes à avancer plus vite, avec une base front-end qui reste saine dans le temps.</p></div>
       </section>
 
       <section className="experience-section" id="parcours">
-        <div className="section-topline"><div className="section-label">02 · Parcours</div><p>Expériences sélectionnées</p></div>
+        <div className="section-topline"><div className="section-label">02 · Parcours</div></div>
         <div className="experience-list">{experiences.map((experience, index) => (
           <article className="experience-card" key={experience.company}>
             <div className="experience-index">0{index + 1}</div><div className="experience-period">{experience.period}</div>
