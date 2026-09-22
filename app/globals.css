@@ -109,9 +109,23 @@ nav a:hover,footer a:hover { opacity:.58; }
 .skill-row { display:flex; gap:20px; padding:15px 0; border-bottom:1px solid rgba(113,132,160,.28); font-family:var(--font-display),sans-serif; font-size:1.08rem; font-weight:620; }
 .skill-row span { color:#7597d8; font-size:.68rem; padding-top:5px; }
 
-.human-section { padding:140px 0; display:grid; grid-template-columns:1.4fr .8fr; gap:clamp(70px,12vw,180px); align-items:end; }
-.human-copy .section-label { margin-bottom:34px; }
-.human-copy p { max-width:670px; margin:30px 0 0; color:var(--muted); font-size:1.05rem; }
+.ai-section { width:auto; margin:0; padding:130px max(32px,calc((100vw - 1240px)/2)) 145px; background:var(--sky); }
+.ai-grid { display:grid; grid-template-columns:1fr 1.25fr; gap:clamp(55px,8vw,125px); margin-top:65px; }
+.ai-intro h2 { max-width:480px; margin:15px 0 0; font-family:var(--font-display),sans-serif; font-size:clamp(2rem,4vw,3.7rem); line-height:1.02; letter-spacing:-.055em; }
+.ai-copy { max-width:650px; color:var(--muted); font-size:1.02rem; line-height:1.75; }
+.ai-copy p { margin:0 0 22px; }
+.ai-tools { display:flex; flex-wrap:wrap; gap:12px; margin-top:56px; }
+.ai-tools span { padding:12px 17px; border:1px solid var(--line); color:var(--blue); font-family:var(--font-display),sans-serif; font-size:.85rem; font-weight:750; }
+
+.human-section { padding:140px 0; }
+.human-section>.section-label { margin-bottom:52px; }
+.bubble-list { display:flex; justify-content:space-between; gap:28px; }
+.bubble-item { flex:1 1 0; min-width:145px; text-align:center; }
+.interest-bubble { display:flex; width:min(100%,190px); aspect-ratio:1; margin:0 auto; align-items:center; justify-content:center; border:0; border-radius:50%; background:var(--sky); color:var(--muted); font-size:.8rem; }
+.interest-bubble img { width:100%; height:100%; border-radius:50%; object-fit:cover; }
+.interest-bubble.has-image { border:0; background:transparent; }
+.bubble-title { margin:18px 0 0; color:var(--ink); font-family:var(--font-display),sans-serif; font-weight:750; }
+.bubble-description { margin:10px auto 0; max-width:220px; color:var(--muted); font-size:.85rem; line-height:1.5; }
 .education-card { position:relative; padding:38px; border:1px solid var(--line); background:white; box-shadow:12px 12px 0 var(--sky); }
 .education-card>span { color:var(--blue); font-size:.76rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
 .education-card strong { display:block; margin-top:20px; font-family:var(--font-display),sans-serif; font-size:1.55rem; line-height:1.3; }
@@ -139,6 +153,7 @@ footer>a:last-child { justify-self:end; display:inline-flex; align-items:center;
 }
 @media (max-width:680px) {
   .site-header,.hero,.profile-section,.experience-section,.projects-section,.human-section { width:min(100% - 36px,1240px); }
+  .ai-section { width:auto; }
   .site-header { height:78px; } .brand-name,.header-contact svg { display:none; }
   .hero { min-height:0; padding:48px 0 70px; gap:55px; } .hero h1 { font-size:clamp(3rem,15vw,4.7rem); }
   .hero-intro { font-size:1.02rem; } .hero-actions { align-items:flex-start; flex-direction:column; gap:22px; }
@@ -149,10 +164,13 @@ footer>a:last-child { justify-self:end; display:inline-flex; align-items:center;
   .profile-section { padding:95px 0; grid-template-columns:1fr; gap:34px; } .profile-body { grid-column:auto; }
   .experience-section { padding-bottom:105px; } .experience-card { padding:35px 0; grid-template-columns:42px 1fr; gap:20px; }
   .projects-grid { grid-template-columns:1fr; }
+  .ai-grid { grid-template-columns:1fr; gap:30px; }
   .projects-panel h2 { max-width:440px; }
   .experience-period { grid-column:2; grid-row:1; } .experience-main,.experience-card ul { grid-column:2; } .experience-index { grid-row:1/span 3; }
   .expertise-section { padding-top:100px; padding-bottom:105px; } .expertise-grid { grid-template-columns:1fr; margin-top:50px; }
-  .human-section { padding:100px 0; grid-template-columns:1fr; }
+  .human-section { padding:100px 0; }
+  .bubble-list { justify-content:flex-start; overflow-x:auto; padding-bottom:12px; }
+  .bubble-item { flex:0 0 145px; }
   .contact-section { padding-top:100px; padding-bottom:100px; } .contact-email { margin-top:55px; }
   .contact-details { align-items:flex-start; flex-direction:column; gap:15px; }
   footer { grid-template-columns:auto 1fr; gap:20px; } footer p { justify-self:end; } footer>a:last-child { display:none; }

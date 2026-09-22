@@ -7,6 +7,13 @@ const personalProjects = [
   { number: '01', title: 'Ce portfolio', tag: 'React · TypeScript', description: 'Le site sur lequel vous êtes est l’une de mes réalisations personnelles. Je l’ai créé en React pour consolider mes bases sur cette technologie largement représentée sur le marché — une manière élégante de joindre l’utile à l’auto-démonstration.', images: [], imageAlt: 'Aperçu du portfolio React' },
   { number: '02', title: 'Mesure de température dans un poêle de masse', tag: 'Électronique · ESP32-WROOM · Serveur local · HTML · CSS', description: 'ce projet a été réalisé pour l\'association, la maison en paille. Un système équipé de 5 sondes Thermocouple K, suit les températures dans un poêle de masse pouvant aller jusqu\'à 1200 degrés. Une carte ESP32-WROOM héberge un serveur local et propose une interface avec un graphique consultable instantanément via nimporte quel device (PC/Android/IOS). Les données peuvent aussi être exportées au format CSV.', images: ['/projet2-01.jpeg', '/projet2-02.jpeg', '/projet2-03.png'], imageAlt: 'Aperçu du projet de mesure de température' },
 ];
+const interests = [
+  { title: 'Voile', image: '/voile.jpeg', description: 'Je pratique la voile, et plus particulièrement les régates. J’apprécie beaucoup la stratégie et l’esprit de camaraderie dans ce sport. Le muscadet est mon bateau de coeur. ' },
+  { title: 'Électronique', image: '/electronique.jpeg', description: 'Comme vous avez pu le voir, je suis particulièrement attaché à l’électronique. J’adore automatiser les process et répondre à des problématiques concrètes.' },
+  { title: 'Rénovation', image: null, description: 'J’adore le bricolage. Cela me permet de faire quelque chose de concret de mes mains et s’équilibre parfaitement avec le code.' },
+  { title: 'Palet breton', image: '/palet%20breton.avif', description: 'Je pratique le palet breton sur planche de bois en club depuis maintenant un an. C’est un sport de ma région dont je suis très fier.' },
+  { title: 'Disc-golf', image: '/disc-golf.webp', description: 'Je pratique le disc-golf en amateur sur Rennes. C’est un sport qui me permet d’évoluer en pleine nature.' },
+];
 
 const experiences = [
   {
@@ -43,7 +50,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#accueil" aria-label="Retour à l’accueil"><span className="brand-mark">PT</span><span className="brand-name">Pierre Travers</span></a>
-        <nav aria-label="Navigation principale"><a href="#profil">Profil</a><a href="#parcours">Parcours</a><a href="#realisations">Réalisations</a><a href="#expertise">Expertise</a></nav>
+        <nav aria-label="Navigation principale"><a href="#profil">Profil</a><a href="#parcours">Parcours</a><a href="#realisations">Réalisations</a><a href="#expertise">Expertise</a><a href="#ia">Mon rapport à l’IA</a></nav>
         <a className="header-contact" href="mailto:pierretravers56@gmail.com">Me contacter <ArrowUpRight size={17} aria-hidden="true" /></a>
       </header>
 
@@ -108,8 +115,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="ai-section" id="ia">
+        <div className="section-label">05 · Mon rapport à l’IA</div>
+        <div className="ai-grid">
+          <div className="ai-intro">
+            <p className="kicker">Un outil, pas un remplaçant</p>
+            <h2>Le monde a changé vite. Ma façon de travailler aussi.</h2>
+          </div>
+          <div className="ai-copy">
+            <p>L’intelligence artificielle a profondément changé le quotidien des développeurs en quelques années. Elle ne m’a pas remplacé : elle m’aide à aller beaucoup plus vite sur les tâches répétitives ou fastidieuses, pour consacrer davantage de temps aux décisions, à la conception et à la qualité.</p>
+            <p>J’utilise principalement ChatGPT, Claude Code et GitHub Copilot. Ces outils m’accompagnent pour explorer une piste, reformuler un besoin, générer une première base ou accélérer une recherche. Je les utilise aussi comme des garde-fous : une relecture supplémentaire, capable de repérer une incohérence, un cas limite ou un risque que l’on peut parfois laisser passer après plusieurs heures de travail.</p>
+            <p>Ils restent des assistants. Je vérifie leurs propositions, je confronte leurs réponses au contexte du projet et je garde la responsabilité des choix techniques et du code livré. L’objectif n’est pas de déléguer la réflexion, mais de disposer d’un regard supplémentaire et de rendre le travail collectif plus rapide et plus pertinent.</p>
+          </div>
+        </div>
+        <div className="ai-tools" aria-label="Outils d’intelligence artificielle utilisés"><span>ChatGPT</span><span>Claude Code</span><span>GitHub Copilot</span></div>
+      </section>
+
       <section className="human-section">
-        <div className="human-copy"><div className="section-label">05 · Au-delà du code</div><h2>Curieux par nature,<br />engagé dans le collectif.</h2><p>Communication, écoute et transmission font partie de ma manière de travailler. En dehors du code, je rénove du bâti ancien, parcours les sentiers, joue au disc-golf et voyage dès que l’occasion se présente.</p></div>
+        <div className="section-label">06 · Au-delà du code</div>
+        <div className="bubble-list" aria-label="Centres d’intérêt">
+          {interests.map((interest) => <div className="bubble-item" key={interest.title}><div className={`interest-bubble${interest.image ? ' has-image' : ''}`}>{interest.image ? <img src={interest.image} alt={`Illustration : ${interest.title}`} /> : <span>Photo à venir</span>}</div><p className="bubble-title">{interest.title}</p><p className="bubble-description">{interest.description}</p></div>)}
+        </div>
       </section>
 
       <section className="contact-section" id="contact">
