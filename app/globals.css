@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-:root { --ink:#101b2f; --navy:#13233e; --blue:#2c62df; --sky:#dce8ff; --paper:#f5f7fb; --white:#fff; --line:#cdd5e3; --muted:#5e6879; }
+:root { --ink:#101b2f; --navy:#13233e; --blue:#2c62df; --sky:#dce8ff; --paper:#f5f7fb; --white:#fff; --line:#cdd5e3; --muted:#5e6879; --font-body:'DM Sans',Arial,sans-serif; --font-display:'Manrope',Arial,sans-serif; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body),Arial,sans-serif; font-size:16px; line-height:1.6; overflow-x:hidden; }
