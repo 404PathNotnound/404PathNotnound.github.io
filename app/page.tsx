@@ -10,7 +10,7 @@ const personalProjects = [
 const interests = [
   { title: 'Voile', image: '/voile.jpeg', description: 'Je pratique la voile, et plus particulièrement les régates. J’apprécie beaucoup la stratégie et l’esprit de camaraderie dans ce sport. Le muscadet est mon bateau de coeur. ' },
   { title: 'Électronique', image: '/electronique.jpeg', description: 'Comme vous avez pu le voir, je suis particulièrement attaché à l’électronique. J’adore automatiser les process et répondre à des problématiques concrètes.' },
-  { title: 'Bricolage/Rénovation', image: null, description: ' Le bricolage me suit depuis des années. Cela me permet de faire quelque chose de concret de mes mains et s’équilibre parfaitement avec le code.' },
+  { title: 'Bricolage/Rénovation', image: '/bricolage.jpg', description: ' Le bricolage me suit depuis des années. Cela me permet de faire quelque chose de concret de mes mains et s’équilibre parfaitement avec le code.' },
   { title: 'Palet breton', image: '/palet%20breton.avif', description: 'Je pratique le palet breton sur planche de bois en club depuis maintenant un an. C’est un sport de ma région dont je suis très fier.' },
   { title: 'Disc-golf', image: '/disc-golf.webp', description: 'Je pratique le disc-golf en amateur sur Rennes. C’est un sport qui me permet d’évoluer en pleine nature.' },
 ];
@@ -58,6 +58,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span /> Développeur Front-End Angular</p>
           <h1>Je construis des interfaces<span> utiles, solides et accessibles.</span></h1>
+          <div className="mobile-portrait"><div className="portrait-frame"><img src="/pierre-travers.jpeg" alt="Pierre Travers au bord de la mer" width="1063" height="1021" /></div><p className="portrait-caption">Basé à Guégon · Bretagne</p></div>
           <p className="hero-intro">Je suis Pierre Travers, développeur front-end avec 6 ans d’expérience. J’imagine et réalise des applications Angular complexes, performantes et agréables à utiliser tout en gardant de solides connaissances en back-end.</p>
           <div className="hero-actions">
             <a className="primary-button" href="#parcours">Découvrir mon parcours <ArrowDown size={18} aria-hidden="true" /></a>

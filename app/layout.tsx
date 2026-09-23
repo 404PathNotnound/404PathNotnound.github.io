@@ -6,8 +6,8 @@ const bodyFont = DM_Sans({ variable: '--font-body', subsets: ['latin'] });
 const displayFont = Manrope({ variable: '--font-display', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Pierre Travers · Développeur Front-End Angular',
-  description: 'Portfolio de Pierre Travers, développeur Front-End Angular spécialisé en TypeScript, RxJS, architecture, performance et accessibilité.',
+  title: 'Pierre Travers · Développeur Front-End',
+  description: 'Portfolio de Pierre Travers, développeur Front-End spécialisé en TypeScript, RxJS, architecture, performance et accessibilité.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
