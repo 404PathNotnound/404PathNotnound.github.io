@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact">
-        <p className="eyebrow light"><span /> Une idée, un besoin, un projet ?</p><h2>Construisons quelque chose<br />ensemble.</h2>
+        <p className="eyebrow light"><span /> Une idée, un besoin, un projet ?</p><h2>Construisons quelque chose ensemble.</h2>
         <div className="contact-details"><a href="tel:+33649234713"><Phone size={17} aria-hidden="true" />06 49 23 47 13</a><span><MapPin size={17} aria-hidden="true" />56120 Guégon</span><a href="mailto:pierretravers56@gmail.com"><Mail size={17} aria-hidden="true" />pierretravers56@gmail.com</a></div>
       </section>
 
