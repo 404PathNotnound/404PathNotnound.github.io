@@ -10,7 +10,7 @@ const personalProjects = [
 const interests = [
   { title: 'Voile', image: '/voile.jpeg', description: 'Je pratique la voile, et plus particulièrement les régates. J’apprécie beaucoup la stratégie et l’esprit de camaraderie dans ce sport. Le muscadet est mon bateau de coeur. ' },
   { title: 'Électronique', image: '/electronique.jpeg', description: 'Comme vous avez pu le voir, je suis particulièrement attaché à l’électronique. J’adore automatiser les process et répondre à des problématiques concrètes.' },
-  { title: 'Rénovation', image: null, description: 'J’adore le bricolage. Cela me permet de faire quelque chose de concret de mes mains et s’équilibre parfaitement avec le code.' },
+  { title: 'Bricolage/Rénovation', image: null, description: ' Le bricolage me suit depuis des années. Cela me permet de faire quelque chose de concret de mes mains et s’équilibre parfaitement avec le code.' },
   { title: 'Palet breton', image: '/palet%20breton.avif', description: 'Je pratique le palet breton sur planche de bois en club depuis maintenant un an. C’est un sport de ma région dont je suis très fier.' },
   { title: 'Disc-golf', image: '/disc-golf.webp', description: 'Je pratique le disc-golf en amateur sur Rennes. C’est un sport qui me permet d’évoluer en pleine nature.' },
 ];
@@ -91,11 +91,9 @@ export default function Home() {
       </section>
 
       <section className="projects-section" id="realisations">
-        <div className="section-topline"><div className="section-label">03 · Réalisations</div></div>
+        <div className="section-topline"><div className="section-label">03 · Réalisations personnelles</div></div>
         <div className="projects-grid">
           <article className="projects-panel projects-panel-dark projects-panel-personal">
-            <p className="kicker light">Réalisations personnelles</p>
-            <h2>Des projets développés pour apprendre, construire et expérimenter.</h2>
             <div className="personal-project-list">{personalProjects.map((project) => (
               <article className="personal-project" key={project.number}>
                 <ProjectCarousel images={project.images} alt={project.imageAlt} />
@@ -139,7 +137,7 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact">
-        <p className="eyebrow light"><span /> Une idée, un besoin, un projet ?</p><h2>Construisons quelque chose<br />de solide ensemble.</h2>
+        <p className="eyebrow light"><span /> Une idée, un besoin, un projet ?</p><h2>Construisons quelque chose<br />ensemble.</h2>
         <div className="contact-details"><a href="tel:+33649234713"><Phone size={17} aria-hidden="true" />06 49 23 47 13</a><span><MapPin size={17} aria-hidden="true" />56120 Guégon</span><a href="mailto:pierretravers56@gmail.com"><Mail size={17} aria-hidden="true" />pierretravers56@gmail.com</a></div>
       </section>
 
